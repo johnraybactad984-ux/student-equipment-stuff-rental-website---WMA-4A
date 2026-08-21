@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusSwap - Dashboard</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header / Navigation */
+    header {
+      background-color: #1e293b;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #38bdf8;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #f1f5f9;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0f172a, #0284c7);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #e0f2fe;
+    }
+
+    /* Main Dashboard */
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+      color: #0f172a;
+    }
+
+    /* Statistics Cards */
+    .stats {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      flex: 1;
+      min-width: 220px;
+      text-align: center;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+
+    .stat-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .stat-card h3 {
+      color: #0284c7;
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+    }
+
+    .stat-card p {
+      color: #64748b;
+    }
+
+    /* Available Items */
+    .items {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .item-card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      flex: 1;
+      min-width: 250px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+
+    .item-picture {
+      background: #e0f2fe;
+      border-radius: 8px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      margin-bottom: 18px;
+    }
+
+    .item-card h3 {
+      color: #0284c7;
+      margin-bottom: 8px;
+    }
+
+    .item-card p {
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .available {
+      display: inline-block;
+      background-color: #dcfce7;
+      color: #166534;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+
+    /* Recent Rentals */
+    .recent-rentals {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      margin-bottom: 10px;
+    }
+
+    .rental {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #e2e8f0;
+      gap: 15px;
+    }
+
+    .rental:last-child {
+      border-bottom: none;
+    }
+
+    .rental-info h4 {
+      color: #0f172a;
+      margin-bottom: 5px;
+    }
+
+    .rental-info p {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .status {
+      background-color: #dbeafe;
+      color: #1d4ed8;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+      background-color: #1e293b;
+      color: #f1f5f9;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+
+      .rental {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="logo">CampusSwap 🔄</div>
+
+    <nav>
+      <a href="ManansalaKian.html">Home</a>
+      <a href="Bactad.html">About</a>
+      <a href="Bautista Erica.html">Contact Us</a>
+      <a href="Perez.html">Login</a>
+      <a href="Nicolas.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <!-- Dashboard Hero -->
+  <section class="hero">
+    <h1>Student Dashboard</h1>
+    <p>Manage your rentals and discover equipment available on campus.</p>
+  </section>
+
+  <!-- Dashboard Content -->
+  <main class="container">
+
+    <!-- Dashboard Statistics -->
+    <h2 class="section-title">Dashboard Overview</h2>
+
+    <section class="stats">
+      <article class="stat-card">
+        <div class="stat-icon">📦</div>
+        <h3>12</h3>
+        <p>Available Items</p>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-icon">🔄</div>
+        <h3>3</h3>
+        <p>Active Rentals</p>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-icon">💰</div>
+        <h3>₱450</h3>
+        <p>Total Spent</p>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-icon">⭐</div>
+        <h3>4.8</h3>
+        <p>Student Rating</p>
+      </article>
+    </section>
+
+    <!-- Available Items -->
+    <h2 class="section-title">Available for Rent</h2>
+
+    <section class="items">
+
+      <article class="item-card">
+        <div class="item-picture">📷</div>
+        <h3>Digital Camera</h3>
+        <p>Perfect for school events, documentation, and media projects.</p>
+        <span class="available">Available • ₱150/day</span>
+      </article>
+
+      <article class="item-card">
+        <div class="item-picture">🔬</div>
+        <h3>Lab Equipment Set</h3>
+        <p>Basic laboratory tools suitable for student experiments and activities.</p>
+        <span class="available">Available • ₱100/day</span>
+      </article>
+
+      <article class="item-card">
+        <div class="item-picture">📽️</div>
+        <h3>Projector</h3>
+        <p>A portable projector for classroom presentations and student events.</p>
+        <span class="available">Available • ₱200/day</span>
+      </article>
+
+    </section>
+
+    <!-- Recent Rentals -->
+    <h2 class="section-title">Recent Rentals</h2>
+
+    <section class="recent-rentals">
+
+      <article class="rental">
+        <div class="rental-info">
+          <h4>📷 Digital Camera</h4>
+          <p>Rented on August 18, 2026 • Return: August 22, 2026</p>
+        </div>
+        <span class="status">Active</span>
+      </article>
+
+      <article class="rental">
+        <div class="rental-info">
+          <h4>📽️ Projector</h4>
+          <p>Rented on August 10, 2026 • Returned on August 12, 2026</p>
+        </div>
+        <span class="status">Completed</span>
+      </article>
+
+      <article class="rental">
+        <div class="rental-info">
+          <h4>👔 Formal Wear</h4>
+          <p>Rented on August 5, 2026 • Returned on August 6, 2026</p>
+        </div>
+        <span class="status">Completed</span>
+      </article>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 CampusSwap. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
