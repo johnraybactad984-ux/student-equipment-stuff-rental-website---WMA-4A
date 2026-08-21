@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusSwap - Navigation and Footer</title>
+
+    <style>
+
+        /* RESET */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+        /* BODY */
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           NAVIGATION BAR
+        ========================== */
+
+        header {
+            background-color: #1e293b;
+            padding: 15px 30px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        /* LOGO */
+        .logo {
+            color: #38bdf8;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+
+        /* NAVIGATION */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+
+        /* NAVIGATION LINKS */
+        nav a {
+            color: #f1f5f9;
+            text-decoration: none;
+            font-size: 0.95rem;
+
+            transition: 0.3s;
+        }
+
+
+        /* HOVER EFFECT */
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+
+        /* =========================
+           MAIN CONTENT
+        ========================== */
+
+        main {
+            flex: 1;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+
+        main h1 {
+            font-size: 2.5rem;
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+
+
+        main p {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+
+        /* INFORMATION BOX */
+        .info-box {
+            background-color: white;
+
+            max-width: 700px;
+            margin: auto;
+            padding: 35px;
+
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+
+        .info-box h2 {
+            color: #0284c7;
+            margin-bottom: 15px;
+        }
+
+
+        .info-box p {
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            margin-top: auto;
+
+            background-color: #1e293b;
+            color: #f1f5f9;
+
+            text-align: center;
+            padding: 20px;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+
+            main {
+                padding: 60px 20px;
+            }
+
+
+            main h1 {
+                font-size: 2rem;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <header>
+
+        <div class="logo">
+            CampusSwap 🔄
+        </div>
+
+
+        <nav>
+
+            <!-- HOME PAGE -->
+            <a href="ManansalaKian.html">
+                Home
+            </a>
+
+
+            <!-- ABOUT PAGE -->
+            <a href="Bactad.html">
+                About
+            </a>
+
+
+            <!-- CONTACT US PAGE -->
+            <a href="Bautista-Erica.html">
+                Contact Us
+            </a>
+
+
+            <!-- LOGIN PAGE -->
+            <a href="Perez.html">
+                Login
+            </a>
+
+
+            <!-- DASHBOARD PAGE -->
+            <a href="Nicolas.html">
+                Dashboard
+            </a>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <h1>
+            CampusSwap
+        </h1>
+
+        <div class="info-box">
+
+            <h2>
+                Welcome to CampusSwap
+            </h2>
+
+
+            <p>
+                CampusSwap is a student platform designed to help students
+                rent and borrow equipment for school projects, events,
+                and everyday campus needs.
+            </p>
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        <p>
+            &copy; 2026 CampusSwap. All rights reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
