@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusSwap - Login</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navigation Bar */
+    header {
+      background-color: #1e293b;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #38bdf8;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #f1f5f9;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* Login Section */
+    .login-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #f8f9fa, #e0f2fe);
+    }
+
+    .login-container {
+      background-color: white;
+      width: 100%;
+      max-width: 420px;
+      padding: 40px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .login-container h1 {
+      text-align: center;
+      color: #0f172a;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    .login-container .subtitle {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 30px;
+      font-size: 0.95rem;
+    }
+
+    /* Form */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #334155;
+      font-weight: 600;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .form-group input:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.15);
+    }
+
+    /* Remember Me and Forgot Password */
+    .login-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      font-size: 0.9rem;
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #475569;
+    }
+
+    .login-options a {
+      color: #0284c7;
+      text-decoration: none;
+    }
+
+    .login-options a:hover {
+      text-decoration: underline;
+    }
+
+    /* Login Button */
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background-color: #38bdf8;
+      color: #0f172a;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #0284c7;
+      color: white;
+    }
+
+    /* Register */
+    .register {
+      text-align: center;
+      margin-top: 25px;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .register a {
+      color: #0284c7;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .register a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav a {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      .login-container {
+        padding: 30px 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="logo">CampusSwap 🔄</div>
+
+    <nav>
+      <a href="ManansalaKian.html">Home</a>
+      <a href="John Ray Bacttad - About Page.html">About</a>
+      <a href="Bautista.html">Contact Us</a>
+      <a href="Perez.html">Login</a>
+      <a href="Nicolas.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <!-- Login Section -->
+  <section class="login-section">
+
+    <div class="login-container">
+
+      <h1>Welcome Back!</h1>
+
+      <p class="subtitle">
+        Login to your CampusSwap account
+      </p>
+
+      <!-- Login Form -->
+      <form id="loginForm">
+
+        <div class="form-group">
+          <label for="email">Student Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your student email"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+          >
+        </div>
+
+        <div class="login-options">
+
+          <label class="remember">
+            <input type="checkbox" id="remember">
+            Remember me
+          </label>
+
+          <a href="#">Forgot Password?</a>
+
+        </div>
+
+        <button type="submit" class="login-btn">
+          Login
+        </button>
+
+      </form>
+
+      <p class="register">
+        Don't have an account?
+        <a href="#">Create an account</a>
+      </p>
+
+    </div>
+
+  </section>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (email !== "" && password !== "") {
+        alert("Login successful!");
+
+        // Redirect to Dashboard
+        window.location.href = "Nicolas.html";
+      }
+    });
+  </script>
+
+</body>
+</html>
